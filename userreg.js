@@ -14,11 +14,42 @@
 
         var output = document.getElementsByClassName("outputArea");
 
-        output[0].innerHTML = "<u><em>Registered Course:</u></em>" + "<br>" + uName + " " + pWord + " has registered to the following course <br><br>" + eMail + ":<br>" + eMail;
+        var output2 = document.getElementsByClassName("outputArea2");
+
+        if(uName.length < 8 && uName.length != 0){
+
+        output[0].innerHTML = "Success! Your username is " + uName;
+
+        }
+        else
+        {
+
+          output[0].innerHTML = "Please enter a valid username.";
+
+        }
+
+        if(pWord.length > 10 || pWord.length == 0){
+
+          output[0].innerHTML = "Please enter a valid password.";
+
+        }
+
+        if(eMail.length == 0){
+
+          output[0].innerHTML = "Please enter a valid email.";
+
+        }
+
+
 
         un.value="";
 
         pw.value="";
 
+        email.value="";
+
       
        }
+
+
+       
