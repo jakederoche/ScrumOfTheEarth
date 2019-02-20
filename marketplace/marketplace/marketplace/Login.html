@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" class="loginhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="shortcut icon" href="img/money.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Login:Scrum</title>
+
+    <script type="text/javascript">
+
+        //passes account info to the server, to create an account request
+        function CreateAccount(id, pass, fname, lname, email) {
+            var webMethod = "AccountServices.asmx/CreateAccount";
+            var parameters = "{\"uid\":\"" + encodeURI(id) + "\",\"pass\":\"" + encodeURI(pass) + "\",\"firstName\":\"" + encodeURI(fname) + "\",\"lastName\":\"" + encodeURI(lname) + "\",\"email\":\"" + encodeURI(email) + "\"}";
+
+            $.ajax({
+                type: "POST",
+                url: webMethod,
+                data: parameters,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    showPanel('logonPanel');
+                    alert("Account request pending approval...");
+                },
+                error: function (e) {
+                    alert("boo...");
+                }
+            });
+        }
+
+        //[WebMethod(EnableSession = true)] //NOTICE: gotta enable session on each individual method
+        //public bool LogOn(string uid, string pass)
+        //{
+        //    //we return this flag to tell them if they logged in or not
+        //    bool success = false;
+
+        //    //our connection string comes from our web.config file like we talked about earlier
+        //    string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
+        //    //here's our query.  A basic select with nothing fancy.  Note the parameters that begin with @
+        //    //NOTICE: we added admin to what we pull, so that we can store it along with the id in the session
+        //    string sqlSelect = "SELECT UserID FROM User_Data WHERE UserName=@idValue and UserPassword=@passValue";
+
+        //    //set up our connection object to be ready to use our connection string
+        //    MySqlConnection sqlConnection = new MySqlConnection(sqlConnectString);
+        //    //set up our command object to use our connection, and our query
+        //    MySqlCommand sqlCommand = new MySqlCommand(sqlSelect, sqlConnection);
+
+        //    //tell our command to replace the @parameters with real values
+        //    //we decode them because they came to us via the web so they were encoded
+        //    //for transmission (funky characters escaped, mostly)
+        //    sqlCommand.Parameters.AddWithValue("@idValue", HttpUtility.UrlDecode(uid));
+        //    sqlCommand.Parameters.AddWithValue("@passValue", HttpUtility.UrlDecode(pass));
+
+        //    //a data adapter acts like a bridge between our command object and 
+        //    //the data we are trying to get back and put in a table object
+        //    MySqlDataAdapter sqlDa = new MySqlDataAdapter(sqlCommand);
+        //    //here's the table we want to fill with the results from our query
+        //    DataTable sqlDt = new DataTable();
+        //    //here we go filling it!
+        //    sqlDa.Fill(sqlDt);
+        //    //check to see if any rows were returned.  If they were, it means it's 
+        //    //a legit account
+        //    if (sqlDt.Rows.Count > 0) {
+        //        //if we found an account, store the id and admin status in the session
+        //        //so we can check those values later on other method calls to see if they 
+        //        //are 1) logged in at all, and 2) and admin or not
+        //        Session["id"] = sqlDt.Rows[0]["UserID"];
+
+        //        success = true;
+        //    }
+        //    //return the result!
+        //    return success;
+        //}
+
+        </script>-->
+
+
+
+
+
+</head>
+<body class="loginbody">
+    <div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">Log in</h2>
+
+  <form class="login-container" action="home.html">
+    <p><input type="text" placeholder="Username"></p>
+    <p><input type="password" placeholder="Password"></p>
+    <p><input type="submit" value="Log in"></p>
+    <p><a href="#">Lost your Password?</a></p>
+    <p><a href="userregform.html">Need an Account?</a></p>
+  </form>
+</div>
+</body>
+</html>
