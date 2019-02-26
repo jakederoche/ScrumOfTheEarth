@@ -1,0 +1,375 @@
+.index_body{
+	margin:0;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 17px;
+	color: white;
+	line-height: 1.6;
+}
+
+
+#showcase{
+	background-image:url('../img/showcase.jpeg');
+	background-size: cover;
+	background-position: center;
+	height:100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+#showcase h1{
+	font-size: 8vh;
+}
+
+.button{
+	border: 2px solid #f4ef86;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+	padding-right: 8vh;
+	padding-left: 8vh;
+	border-radius: 25px;
+	margin-top: 3vh;
+	text-decoration: none;
+	color: white;
+	-webkit-transition: all ease 0.8s;
+}
+
+.button:hover{
+ box-shadow: inset 10em 0 0 0 #f4ef86;
+ color: black;
+}
+
+#container{
+	border: 1px black;
+}
+
+.homebody{
+	font-weight: 800;
+	margin: 0;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#topbar{
+	height: 100px;
+	background-image: url("../img/Ocean.jpeg");
+	margin: 0;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300|Roboto");
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+header {
+  height: 80px;
+  display: flex;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background-color: #f4f4f4;
+   box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+  padding: 20px 10px;
+}
+
+.logo {
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: #0474bc;
+}
+
+.logo-about {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+}
+
+
+
+.header-nav {
+  display: flex;
+}
+
+.header-nav-item {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.header-nav-item a {
+  color: #000;
+  text-decoration: none;
+}
+
+.header-nav-item span {
+  height: 2px;
+  background-color: #0474bc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  transition: 0.3s ease;
+}
+
+.header-nav-item:hover span {
+  width: 100%;
+}
+
+.header-nav-item + .header-nav-item {
+  margin-left: 25px;
+}
+.mobile-menu {
+  list-style-type: none;
+}
+
+.fa-bars {
+  margin-right: 20px;
+  padding-left: 40px;
+}
+
+@media screen and (min-width: 1140px) {
+  .header-container,
+  .hero-container,
+  .main-container,
+  .footer-container {
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Mobile to Tablet  */
+@media (min-width: 320px) and (max-width: 767px) {
+  .header-nav-item, .mobile-menu {
+    display:none;
+  } 
+  
+}
+
+/* Tablet to Desktop */
+@media (min-width: 768px) {
+  
+  .mobile-menu, .fa-bars {
+    display: none;
+  }
+  
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+.loginhtml{
+	background: url("../img/City.jpeg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.loginbody {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #0474bc;
+}
+
+.login-header {
+  background: #0474bc;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.login-container {
+  background:white;
+  padding: 12px;
+}
+
+.login p {
+  padding: 12px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #0474bc;
+  color: #555;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="submit"] {
+  background: #0474bc;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="submit"]:hover {
+  background: #17c;
+}
+
+.login input[type="submit"]:focus {
+  border-color: #05a;
+}
+
+.login-container a{
+	text-decoration: none;
+	color: black;
+}
+
+.login-container a:hover{
+	color: #0474bc;
+}
+
+.form_container{
+  width: 40%;
+  margin:auto;
+  padding-top: 50px;
+}
+
+.form_container input[type=text],.form_container input[type=password],.form_container input[type=email],select{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#button{
+  background-color: #0474bc;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registrationHtml{
+  background: url("../img/Seaside.jpeg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#topbar a img{
+  width: 40px;
+  }
+
+#topbar a img:hover{
+  transition: 0.70s;
+  -webkit-transition: 0.70s;
+  -moz-transition: 0.70s;
+  -ms-transition: 0.70s;
+  -o-transition: 0.70s;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.descriptions{
+  text-align: right;
+  display: inline-block;
+  padding: 0;
+  margin-right: 2vh;
+  border: 1px solid black;
+}
+
+.text_info{
+  border: 1px solid black;
+  display: inline-block;
+  padding: 0;
+  text-align: left;
+}
+
+.content_container img{
+  margin-top: 10px;
+  max-width: 30%;
+  max-height: 20%;
+}
+
+.master_content{
+  margin-top: 2%;
+  width: 50vh;
+  height: 75vh;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  background-color: #6E99A2;
+  border-radius: 100px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.content_container p:focus{
+  background-color: white;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}

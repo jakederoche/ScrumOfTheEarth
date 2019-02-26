@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr" class="loginhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="shortcut icon" href="img/money.ico">
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Login:Scrum</title>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+
+
+
+        //passes account info to the server, to create an account request
+        function LogOn(id, pass) {
+            //alert("here");
+            var webMethod = "marketplace.asmx/LogOn";
+            var parameters = "{\"uid\":\"" + encodeURI(id) + "\",\"pass\":\"" + encodeURI(pass) + "\"}";
+
+            $.ajax({
+                type: "POST",
+                url: webMethod,
+                data: parameters,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    if (msg.d == true) {
+                        //show home page
+                        window.location = "home.html";
+                    }
+                    else { msg.d == false } {
+
+                        //show wrong password/account
+
+                    }
+                },
+                error: function (e) {
+                    alert("Error with login.");
+                }
+            });
+        }
+
+
+
+
+    </script>-->
+
+
+
+
+
+</head>
+<body class="loginbody">
+    <div class="login">
+  <div class="login-triangle"></div>
+
+  <h2 class="login-header">Log in</h2>
+
+  <form class="login-container" action="#">
+    <p><input type="text" placeholder="Username" id="Username"></p>
+    <p><input type="password" placeholder="Password" id="pass"></p>
+    <p><input type="button" value="Log in" onclick="LogOn(document.getElementById('Username').value, document.getElementById('pass').value)"></p>
+    <p><a href="#">Lost your Password?</a></p>
+    <p><a href="userregform.html">Need an Account?</a></p>
+  </form>
+</div>
+</body>
+</html>
