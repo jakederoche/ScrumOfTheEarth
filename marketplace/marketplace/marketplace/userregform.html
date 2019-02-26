@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html class="registrationHtml">
+
+<head>
+    <title>User Registration</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        //passes account info to the server, to create an account request
+        function CreateAccount(userID, userName, userPassword, userSecQuestion, userSecAnswer, userEmail, userShipAddress, userAbout) {
+            var webMethod = "marketplace.asmx/CreateAccount";
+            var parameters = "{\"UserID\":\"" + encodeURI(userID) + "\",\"UserPassword\":\"" + encodeURI(userPassword) + "\",\"UserName\":\"" + encodeURI(userName) + "\",\"secQuestion\":\"" + encodeURI(userSecQuestion) + "\",\"secAnswer\":\"" + 
+                encodeURI(userSecAnswer) + "\",\"email\":\"" + encodeURI(userEmail) + "\",\"ship\":\"" + encodeURI(userShipAddress) + "\",\"about\":\"" + encodeURI(userAbout) + "\"}";
+
+            $.ajax({
+                type: "POST",
+                url: webMethod,
+                data: parameters,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    if (msg.d == true) {
+
+                        //bring back to login
+                        alert("success");
+
+                    }
+                    else { msg.d == false } {
+
+                        alert("Failed to register...");
+
+                    }
+
+                },
+                error: function (e) {
+                    alert("Errow with account registration.");
+                }
+            });
+        }
+
+
+    </script>-->
+
+</head>
+
+            <body class="userRegBody">
+                <div class="form_container">
+                    <form action="">
+                        <label for="uName">Username:</label>
+                        <input type="text" class="uName" placeholder="Enter a Username" id="Username">
+
+                        <label for="pWord">Password:</label>
+                        <input type="password" class="pWord" placeholder="Enter a Password" id="Password">
+
+                        <label for="eMail">Email:</label>
+                        <input type="email" class="eMail" placeholder="Enter your Email" id="Email">
+
+                        <label for="">Security Question:</label>
+                        <select name="securityQ" class="securityQ" id="SecQuestion">
+                            <option value="school">What highschool did you go to?</option>
+                            <option value="pet">What is the name of your first pet?</option>
+                            <option value="color">What is your favorite color?</option>
+                            <option value="travel">If you could travel anywhere in the world where would you go?</option>
+                        </select>
+                        <input type="text" class="securityQAnswer" placeholder="Enter your Answer" id="SecAnswer">
+
+                        <label for="address">Shipping Address:</label>
+                        <input type="text" class="address" placeholder="Enter your address" id="Address">
+
+                        <label for="about">About you:</label>
+                        <input type="text" class="about" placeholder="About" id="About">
+
+                        <input type="submit" value="Register" id="button" onclick="CreateAccount(document.getElementById('Username').value,
+        document.getElementById('Password').value, document.getElementById('SecQuestion').value, document.getElementById('SecAnswer').value,
+        document.getElementById('Email').value, document.getElementById('Address').value, document.getElementById('About').value)">
+                    </form>
+      </div>
+                                    <script src="userreg.js"></script>
+
+    </body>
+
+</html>
