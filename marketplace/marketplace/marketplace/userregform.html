@@ -6,17 +6,17 @@
     <title>User Registration</title>
 
     <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="style (1).css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript">
 
         //passes account info to the server, to create an account request
-        function CreateAccount(userID, userName, userPassword, userSecQuestion, userSecAnswer, userEmail, userShipAddress, userAbout) {
+        function CreateAccount(userName, userPassword, userSecQuestion, userSecAnswer, userEmail, userShipAddress, userAbout) {
             var webMethod = "marketplace.asmx/CreateAccount";
-            var parameters = "{\"UserID\":\"" + encodeURI(userID) + "\",\"UserPassword\":\"" + encodeURI(userPassword) + "\",\"UserName\":\"" + encodeURI(userName) + "\",\"secQuestion\":\"" + encodeURI(userSecQuestion) + "\",\"secAnswer\":\"" + 
-                encodeURI(userSecAnswer) + "\",\"email\":\"" + encodeURI(userEmail) + "\",\"ship\":\"" + encodeURI(userShipAddress) + "\",\"about\":\"" + encodeURI(userAbout) + "\"}";
+            var parameters = "{\"UserPassword\":\"" + encodeURI(userPassword) + "\",\"UserName\":\"" + encodeURI(userName) + "\",\"UserSecQuestion\":\"" + encodeURI(userSecQuestion) + "\",\"UserSecAnswer\":\"" + 
+                encodeURI(userSecAnswer) + "\",\"UserEmail\":\"" + encodeURI(userEmail) + "\",\"UserShipAddress\":\"" + encodeURI(userShipAddress) + "\",\"UserAbout\":\"" + encodeURI(userAbout) + "\"}";
 
             $.ajax({
                 type: "POST",
@@ -25,17 +25,10 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (msg) {
-                    if (msg.d == true) {
-
-                        //bring back to login
+                    
                         alert("success");
 
-                    }
-                    else { msg.d == false } {
-
-                        alert("Failed to register...");
-
-                    }
+                    
 
                 },
                 error: function (e) {
@@ -51,7 +44,7 @@
 
             <body class="userRegBody">
                 <div class="form_container">
-                    <form action="">
+                    <form action="#">
                         <label for="uName">Username:</label>
                         <input type="text" class="uName" placeholder="Enter a Username" id="Username">
 
@@ -62,7 +55,7 @@
                         <input type="email" class="eMail" placeholder="Enter your Email" id="Email">
 
                         <label for="">Security Question:</label>
-                        <select name="securityQ" class="securityQ" id="SecQuestion">
+                        <select class="securityQ" id="SecQuestion">
                             <option value="school">What highschool did you go to?</option>
                             <option value="pet">What is the name of your first pet?</option>
                             <option value="color">What is your favorite color?</option>
@@ -76,7 +69,7 @@
                         <label for="about">About you:</label>
                         <input type="text" class="about" placeholder="About" id="About">
 
-                        <input type="submit" value="Register" id="button" onclick="CreateAccount(document.getElementById('Username').value,
+                        <input type="button" value="Register" id="button" onclick="CreateAccount(document.getElementById('Username').value,
         document.getElementById('Password').value, document.getElementById('SecQuestion').value, document.getElementById('SecAnswer').value,
         document.getElementById('Email').value, document.getElementById('Address').value, document.getElementById('About').value)">
                     </form>

@@ -144,13 +144,13 @@ namespace marketplace
 
         //EXAMPLE OF AN INSERT QUERY WITH PARAMS PASSED IN.  BONUS GETTING THE INSERTED ID FROM THE DB!
         [WebMethod(EnableSession = true)]
-        public void CreateAccount(string UserID, string UserName, string UserPassword, string UserSecQuestion, string UserSecAnswer, string UserEmail, string UserShipAddress, string UserAbout)
+        public void CreateAccount( string UserName, string UserPassword, string UserSecQuestion, string UserSecAnswer, string UserEmail, string UserShipAddress, string UserAbout)
         {
             string sqlConnectString = System.Configuration.ConfigurationManager.ConnectionStrings["myDB"].ConnectionString;
             //the only thing fancy about this query is SELECT LAST_INSERT_ID() at the end.  All that
             //does is tell mySql server to return the primary key of the last inserted row.
-            string sqlSelect = "insert into user_data (UserID, UserName, UserPassword, UserSecQuestion, UserSecAnswer, UserEmail, UserShipAddress, UserAbout)" +
-                "values(@userName, @passValue, @secQuestionAnswer, @secAnswer, @emailValue, @shipAddress, @userAbout, @uID); SELECT LAST_INSERT_ID();";
+            string sqlSelect = "insert into user_data (UserName, UserPassword, UserSecQuestion, UserSecAnswer, UserEmail, UserShipAddress, UserAbout)" +
+                "values(@userName, @passValue, @secQuestionAnswer, @secAnswer, @emailValue, @shipAddress, @userAbout); SELECT LAST_INSERT_ID();";
 
             MySqlConnection sqlConnection = new MySqlConnection(sqlConnectString);
             MySqlCommand sqlCommand = new MySqlCommand(sqlSelect, sqlConnection);
@@ -162,7 +162,7 @@ namespace marketplace
             sqlCommand.Parameters.AddWithValue("@emailValue", HttpUtility.UrlDecode(UserEmail));
             sqlCommand.Parameters.AddWithValue("@shipAddress", HttpUtility.UrlDecode(UserShipAddress));
             sqlCommand.Parameters.AddWithValue("@userAbout", HttpUtility.UrlDecode(UserAbout));
-            sqlCommand.Parameters.AddWithValue("@uID", HttpUtility.UrlDecode(UserID));
+           //qlCommand.Parameters.AddWithValue("@uID", HttpUtility.UrlDecode(UserID));
 
             //this time, we're not using a data adapter to fill a data table.  We're just
             //opening the connection, telling our command to "executescalar" which says basically
@@ -181,6 +181,7 @@ namespace marketplace
             }
             catch (Exception e)
             {
+                throw e;
             }
             sqlConnection.Close();
         }
