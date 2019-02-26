@@ -373,3 +373,55 @@ header {
   margin-right: auto;
   margin-left: auto;
 }
+
+.homediv{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.homediv img{
+  width: 40%;
+}
+
+.homehead{
+  text-align: center;
+}
+
+.homehead p{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homebar{
+  background: url("../img/Lighthouse.jpeg");
+  border-top: 1px solid black;
+  box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    height: 200px;
+}
+
+.homebar h1{
+  height: 50px;
+}
+
+.homebar p{
+  width: 93%;
+}
+
+.width{
+  width: 80%;
+  display: inline-block;
+}
+
+.homediv p{
+  width: 60%;
+  margin: auto;
+}
+
+footer{
+  background-color: grey;
+}
