@@ -87,11 +87,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="City.jpeg" />
+    <Content Include="gear.png" />
     <Content Include="Global.asax" />
     <Content Include="home.html" />
     <Content Include="Login.html" />
     <Content Include="marketplace.asmx" />
+    <Content Include="money.ico" />
+    <Content Include="Ocean.jpeg" />
+    <Content Include="Seaside.jpeg" />
+    <Content Include="showcase.jpeg" />
     <Content Include="style %281%29.css" />
+    <Content Include="style %283%29.css" />
+    <Content Include="userDefault.jpg" />
     <Content Include="userregform.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
