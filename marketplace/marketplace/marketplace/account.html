@@ -51,6 +51,44 @@
     </div>
   </div>
 </header>
+
+    <head>
+        <title>Payment Information</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+        <body>
+            <div class="header">
+                <h2>Payment Information</h2>
+            </div>
+            <form method="post" action="payment.html">
+                <button type="submit" class="btn" name="payment">Add a card</button>
+                <div class="input-group">
+                     <label>Name on card</label>
+                    <input type="text" name="nameoncard">
+                </div>
+                <div class="input-group">
+                    <label>Card number</label>
+                    <input type="text" name="cardnumber">
+                </div>
+                <div class="input-group">
+                    <label>Expiration date</label>
+                    <input type="text" name="expirationdate">
+                </div>
+                <div class="input-group">
+                    <label>Security code</label>
+                    <input type="text" name="securitycode">
+                </div>
+                <div class="input-group">
+                    <label>Zip code</label>
+                    <input type="text" name="zipcode">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn" name="payment">Save</button>
+                </div>
+            </form>
+        </div>
+      </div>
+
 <script type="text/javascript" src="home.js"></script>
 </body>
 </html>
